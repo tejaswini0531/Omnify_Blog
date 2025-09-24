@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Backend",
+      "type": "shell",
+      "command": "cd backend && python manage.py runserver",
+      "options": {
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": ".",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "Quit the server with CONTROL-C"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Run Frontend",
+      "type": "shell",
+      "command": "cd frontend && npm start",
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": ".",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "Compiled successfully"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Run Both",
+      "dependsOn": ["Run Backend", "Run Frontend"],
+      "dependsOrder": "parallel"
+    }
+  ]
+}
