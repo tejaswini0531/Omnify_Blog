@@ -1,4 +1,3 @@
-﻿# Omnify Blog Application
 
 # Omnify Blog Application
 
@@ -73,3 +72,4 @@ bash
 Copy code
 npm start
 Frontend runs at: http://localhost:3000
+
